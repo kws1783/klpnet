@@ -7,10 +7,17 @@
         
         <!-- CSS INCLUDE -->        
         <link rel="stylesheet"	href="${pageContext.request.contextPath}/resources/css/theme-default.css">
-
+		 <!-- jQuery -->
+		  <script src="${pageContext.request.contextPath}/resource/js/jquery.js"></script>
+        <script src="${pageContext.request.contextPath}/resource/js/jquery.min.js"></script>
 	<title>Data</title>
 </head>
 <script type="text/javascript">
+$(document).ready(function(){	
+	$('#server_1').css('background-color','white');
+	$("#desktop_1").attr("src", "${pageContext.request.contextPath}/resources/img/icon/desktop_click.png");
+
+});
 function test(){
 	location.href="<%=request.getContextPath()%>/getCpuInfo.do";
 }
@@ -30,11 +37,13 @@ function test(){
                 </div>
               <!-- END X-NAVIGATION VERTICAL --> 
             <!-- START PAGE SIDEBAR -->
-            <div class="sidebar" style="background:#088acf;float:left;width:8%;height: 100%">
+            <div class="sidebar" style="background:#088acf;float:left;width:100px;height: 100%">
                 <!-- START 페이지 왼쪽 네비게이션 -->
-        	  <ul class="">
-       				
-                </ul>
+                
+        	 <div style="width:100px;height: 100px;text-align:center;cursor:pointer;" id="server_1" onclick="window.reload();">
+        	 		<img id="desktop_1" src="${pageContext.request.contextPath}/resources/img/icon/desktop.png" width="70px" height="50px" style=" vertical-align: top;float:left;margin:15px 15px 3px 15px"></img>
+        	 	<span style="color:white"><b>SERVER1</b></span>
+        	 </div>
                 <!-- END X-NAVIGATION -->
             </div>
           
