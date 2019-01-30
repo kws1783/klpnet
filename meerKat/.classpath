@@ -25,6 +25,6 @@
 			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="C:/업무/sts-4.1.1.RELEASE/workspace/mariadb-java-client-2.3.0-sources.jar"/>
+	<classpathentry kind="lib" path="D:/Download/mariadb-java-client-2.3.0-sources.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>
