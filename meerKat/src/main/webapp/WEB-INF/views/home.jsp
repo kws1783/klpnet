@@ -39,7 +39,7 @@ function svChange(svNum){
 
 }
 function test(){
-	location.href="<%=request.getContextPath()%>/getCpuInfo.do";
+	location.href="<%=request.getContextPath()%>/getDiskInfo.do";
 }
 </script>
 <body>
