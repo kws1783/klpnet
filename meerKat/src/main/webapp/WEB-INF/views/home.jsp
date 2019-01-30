@@ -10,6 +10,11 @@
 
 	<title>Data</title>
 </head>
+<script type="text/javascript">
+function test(){
+	location.href="<%=request.getContextPath()%>/getCpuInfo.do";
+}
+</script>
 <body>
       <!-- START PAGE CONTAINER -->
         <div class="container">
@@ -19,7 +24,7 @@
                  	<img src="${pageContext.request.contextPath}/resources/img/logo.png" width="50px" height="47px" style=" vertical-align: top;margin:3px 0px 0px 10px;"></img>
                		<b style="color:white;font-size: 3em;"> MEERKAT</b>
                		
-               			<img src="${pageContext.request.contextPath}/resources/img/icon/out1.png"  width="40px" height="35px" style=" vertical-align: top;float:right; margin:0.7% 0.5% 0 0.7%;cursor:pointer" onclick="alert('나가기누름');"></img>
+               			<img src="${pageContext.request.contextPath}/resources/img/icon/out1.png"  width="40px" height="35px" style=" vertical-align: top;float:right; margin:0.7% 0.5% 0 0.7%;cursor:pointer" onclick="test();"></img>
                		<!-- 위엔 나가기 아래IMG태그는 로그아웃 -->	
                 		<img src="${pageContext.request.contextPath}/resources/img/icon/smile.png"  width="40px" height="40px" style=" vertical-align: top;float:right; margin:0.5% 0.5% 0 0.5%;cursor:pointer" onclick="alert('로그아웃누름');"></img>
                 </div>
