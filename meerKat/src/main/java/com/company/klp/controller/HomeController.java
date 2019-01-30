@@ -1,5 +1,7 @@
 package com.company.klp.controller;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.text.DateFormat;
 import java.util.Date;
 import java.util.Locale;
@@ -10,6 +12,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+
+import com.company.klp.dto.DBConnectDTO;
 
 /**
  * Handles requests for the application home page.
@@ -48,4 +52,17 @@ public class HomeController {
 		
 		return "home";
 	}
+	
+	@RequestMapping(value = "getCpuInfo.do", method = RequestMethod.GET)
+	public String getCpuInfo(Locale locale, Model model) {
+		
+		DBConnectDTO dbDto = new DBConnectDTO();
+		Connection conn = dbDto.getConnection();
+		//PreparedStatement pstmt = 
+		
+		
+		return "home2";
+	}
+	
+	
 }
