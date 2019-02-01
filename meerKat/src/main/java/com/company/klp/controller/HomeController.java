@@ -2,6 +2,8 @@ package com.company.klp.controller;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.text.DateFormat;
 import java.util.Date;
 import java.util.Locale;
@@ -64,5 +66,32 @@ public class HomeController {
 		return "home2";
 	}
 	
+	@RequestMapping(value = "getDiskInfo.do", method = RequestMethod.GET)
+	public String getDiskInfo(Locale locale, Model model) {
+		
+		DBConnectDTO dbDto = new DBConnectDTO();
+		Connection conn = dbDto.getConnection();
+		String query = "select * from t_cpu_info";
+		ResultSet rs = null;
+		PreparedStatement pstmt = null;
+		try {
+			pstmt = conn.prepareStatement(query);
+			rs = pstmt.executeQuery();
+			
+			
+			while(rs.next()) {
+				System.out.println(rs.getInt("_id"));
+				System.out.println(rs.getString("serverID"));
+			}			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}finally {
+			dbDto.closeConnection(rs, pstmt, conn);
+		}
+		
+		
+		
+		return "home";
+	}
 	
 }
