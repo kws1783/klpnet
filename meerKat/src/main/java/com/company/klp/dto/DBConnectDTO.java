@@ -26,6 +26,13 @@ public class DBConnectDTO {
 		try {
 			Class.forName("org.mariadb.jdbc.Driver");
 			conn = DriverManager.getConnection(db_Url, db_User, db_Pwd);
+			
+			if(conn != null) {
+				System.out.println("Database Access Success");
+			}else {
+				System.out.println("Database Access Fail");
+			}
+			
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
 			return null;
